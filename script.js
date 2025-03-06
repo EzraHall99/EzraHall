@@ -1,6 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const button = document.querySelector(".cta-button");
-    button.addEventListener("click", () => {
-        alert("Let's check out your projects!");
-    });
+    const heroText = document.querySelector(".hero h1");
+    heroText.style.opacity = "0";
+    heroText.style.transform = "translateY(20px)";
+    setTimeout(() => {
+        heroText.style.transition = "all 0.8s ease-in-out";
+        heroText.style.opacity = "1";
+        heroText.style.transform = "translateY(0)";
+    }, 500);
 });
