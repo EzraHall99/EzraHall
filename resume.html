@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ezra Hall | Resume</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
 
@@ -20,15 +21,29 @@
 
     <section class="resume-container">
         <h1>My Resume</h1>
-        <p>Click the button below to view or download my resume.</p>
-        
+        <p>Choose a format to view or download:</p>
+
+        <!-- Resume Preview -->
         <div class="resume-box">
-            <iframe src="assets/ezrahall_resume.pdf"></iframe>
+            <iframe id="resumeFrame" src="assets/ezrahall_resume.pdf" onerror="handleLoadError()"></iframe>
         </div>
 
-        <a href="assets/ezrahall_resume.pdf" download="Ezra_Hall_Resume.pdf" class="cta-button">
-            📥 Download Resume
-        </a>
+        <!-- Download Options -->
+        <div class="download-buttons">
+            <a href="assets/ezrahall_resume.pdf" download="Ezra_Hall_Resume.pdf" class="cta-button">
+                📥 Download PDF
+            </a>
+            <a href="assets/ezrahall_resume.docx" download="Ezra_Hall_Resume.docx" class="cta-button">
+                📥 Download DOCX
+            </a>
+            <a href="assets/ezrahall_resume.txt" download="Ezra_Hall_Resume.txt" class="cta-button">
+                📥 Download TXT
+            </a>
+        </div>
+
+        <p id="error-message" class="hidden">
+            ❌ Unable to load the resume preview. Please download it instead.
+        </p>
     </section>
 
     <footer>

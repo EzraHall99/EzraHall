@@ -98,36 +98,59 @@ footer {
 
 /* Resume Page */
 .resume-container {
-    padding: 60px 20px;
-    text-align: center;
+  padding: 60px 20px;
+  text-align: center;
 }
 
 .resume-box {
-    width: 70%;
-    max-width: 800px;
-    height: 600px;
-    margin: 20px auto;
-    border: 2px solid #30363d;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 70%;
+  max-width: 800px;
+  height: 600px;
+  margin: 20px auto;
+  border: 2px solid #30363d;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .resume-box iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.download-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.hidden {
+  display: none;
+}
+
+#error-message {
+  color: red;
+  margin-top: 20px;
+  font-weight: bold;
+  display: none;
 }
 
 /* Responsive for Mobile */
 @media (max-width: 768px) {
-    .resume-box {
-        width: 90%;
-        height: 450px;
-    }
+  .resume-box {
+    width: 90%;
+    height: 450px;
+  }
+
+  .download-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 nav a.active {
-    color: #58a6ff;
-    font-weight: bold;
+  color: #58a6ff;
+  font-weight: bold;
 }

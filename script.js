@@ -8,3 +8,13 @@ document.addEventListener("DOMContentLoaded", () => {
         heroText.style.transform = "translateY(0)";
     }, 500);
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const resumeFrame = document.getElementById("resumeFrame");
+    const errorMessage = document.getElementById("error-message");
+
+    // If PDF fails to load, display error message
+    resumeFrame.onerror = function () {
+        resumeFrame.style.display = "none";
+        errorMessage.classList.remove("hidden");
+    };
+});
