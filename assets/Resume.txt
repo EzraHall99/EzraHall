@@ -1,0 +1,90 @@
+EZRA HALL
+SOFTWARE DEVELOPER | POWER PLATFORM & CLOUD SOLUTIONS 
+
+Sioux Falls, SD | (818) 877-9241 | ezrajhall0@gmail.com | linkedin.com/in/ezra-j-hall 
+
+
+- PROFESSIONAL SUMMARY -
+
+Results-driven Software Developer specializing in enterprise application development, 
+automation, and cloud-based solutions. Expertise in designing and implementing scalable, secure 
+applications that enhance business operations, streamline workflows, and optimize data 
+management. Experienced in Microsoft Power Platform (Power Apps, Power Automate, Power 
+BI, Dataverse), Azure Cloud Services, and enterprise integrations. Adept at leading digital 
+transformations, modernizing legacy systems, and automating complex business processes. 
+
+
+🖥️ - PROFESSIONAL EXPERIENCE - 🖥️
+ 
+📄 Metas Solutions | Software Developer (Power Platform & Cloud Solutions) 
+June 2024 – Present 
+• Developed enterprise-level applications leveraging Power Apps, Power Automate, and 
+Dataverse, enhancing data accessibility and workflow efficiency. 
+• Designed and optimized Power BI dashboards, providing real-time business intelligence for 
+executive decision-making. 
+• Implemented automated workflows, reducing manual administrative workload by 40% and 
+improving operational efficiency. 
+• Ensured compliance with security protocols and data governance standards, integrating 
+Azure Active Directory (AAD) authentication. 
+• Led migration efforts to modernize legacy applications, reducing maintenance costs by 40% 
+and improving system scalability. 
+
+📄 United States Marine Corps | Application Developer & Program Manager 
+June 2022 – June 2024 
+• Spearheaded the transition from paper-based records to a secure digital system using the 
+Microsoft Power Platform, achieving 100% data retention. 
+• Developed mission-critical applications for project management, asset tracking, and 
+personnel records, boosting efficiency by 60%. 
+• Automated key workflows through Power Automate, reducing response times and manual 
+intervention by 40%. 
+• Worked alongside Microsoft engineers and DOD leadership to push the boundaries of Power 
+Apps development, ensuring high-performance solutions. 
+• Led a team in optimizing database architecture and cloud infrastructure, implementing Azure 
+AD authentication and secure API integrations. 
+
+📄 United States Marine Corps | Network Operations Center Engineer 
+July 2017 – June 2022 
+• Managed high-availability network infrastructure supporting 16,000+ personnel, ensuring 
+uninterrupted operations. 
+• Provided Tier 3 support for satellite and network communications, resolving complex 
+connectivity issues. 
+• Trained and mentored junior network engineers in network security and system optimization. 
+TECHNICAL SKILLS 
+• Enterprise Application Development: Power Apps, Power Automate, Dataverse, SharePoint 
+Online 
+• Cloud & Infrastructure: Microsoft Azure (Logic Apps, Functions, Active Directory) 
+• Data & Business Intelligence: Power BI, SQL, Data Modeling, API Integrations 
+• Software Development: Python, C#, JavaScript, Web Development (HTML, CSS, REST 
+APIs) 
+• Automation & Workflow Optimization: RPA, Azure Logic Apps, Secure System Integrations 
+
+
+🗝️ - KEY PROJECTS - 🗝️
+
+🎗️ Enterprise Resource & Asset Management System (SourceIt) 
+A high-impact application designed to optimize resource allocation and personnel management, 
+managing over 3 million database records for 6,000+ personnel. 
+• Impact: Improved operational efficiency by 60%, enabling seamless tracking of assets and 
+personnel across multiple locations. 
+• Technologies Used: Power Apps (Custom Connectors), Power BI (Advanced Dashboards), 
+Power Automate (Process Automation), Azure AD (Secure Authentication).
+ 
+🎗️ Personnel Records Management System (Centrifuge) 
+A secure and scalable records management application designed to enhance administrative 
+oversight and workforce planning. 
+• Impact: Improved personnel tracking and career development analysis, reducing manual 
+administrative workload by 40%. 
+• Technologies Used: Power Apps (Secure Data Entry), Power Automate (Automated Record 
+Updates), Dataverse (Secure Data Storage & Access Control). 
+
+
+- KEY ACHIEVEMENTS -
+ 
+• Led a full-scale enterprise migration from legacy systems to Microsoft Power Platform, 
+eliminating inefficiencies and ensuring 100% data integrity. 
+• Developed mission-critical applications that improved operational efficiency by up to 60% in 
+select areas. 
+• Reduced maintenance costs by 40% through modernization and automation of key business 
+processes. 
+• Implemented advanced Power BI dashboards, increasing real-time visibility and improving 
+decision-making efficiency by 25%. 
