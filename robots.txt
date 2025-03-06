@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ezrahall.com/sitemap.xml
