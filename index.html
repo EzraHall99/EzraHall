@@ -5,19 +5,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ezra Hall | Software Developer Portfolio</title>
-  <meta name="description" content="Ezra Hall - Software Developer specializing in Power Platform, enterprise applications, and automation.">
+  <meta name="description"
+    content="Ezra Hall - Software Developer specializing in Power Platform, enterprise applications, and automation.">
   <meta name="keywords" content="Ezra Hall, Software Developer, Power Platform, Microsoft, Automation, WPF, PowerApps">
   <meta name="author" content="Ezra Hall">
 
   <meta property="og:title" content="Ezra Hall | Software Developer">
-  <meta property="og:description" content="Software Developer specializing in Power Platform & enterprise applications.">
+  <meta property="og:description"
+    content="Software Developer specializing in Power Platform & enterprise applications.">
   <meta property="og:image" content="https://ezrahall99.github.io/EzraHall/assets/images/profile-image.jpg">
   <meta property="og:url" content="https://ezrahall99.github.io/EzraHall/">
   <meta property="og:type" content="website">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Ezra Hall | Software Developer">
-  <meta name="twitter:description" content="Software Developer specializing in Power Platform & enterprise applications.">
+  <meta name="twitter:description"
+    content="Software Developer specializing in Power Platform & enterprise applications.">
   <meta name="twitter:image" content="https://ezrahall99.github.io/EzraHall/assets/images/profile-image.jpg">
 
   <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
@@ -28,9 +31,18 @@
 
 <body>
   <header>
-    <div class="logo"><img class="header-img" src="assets/images/profile-image.jpg" alt="Ezra Hall Profile Picture" loading="lazy">Ezra Hall</div>
-    <nav>
+    <div class="logo">
+      <img class="header-img" src="assets/images/profile-image.jpg" alt="Ezra Hall Profile Picture" loading="lazy">
+      <a href="index.html">Ezra Hall</a>
+    </div>
+
+    <!-- Hamburger Menu Button (Hidden on Desktop) -->
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <!-- Unified Navigation (Works for Both Desktop & Mobile) -->
+    <nav id="nav-menu">
       <ul>
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>

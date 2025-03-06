@@ -1,59 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ezra Hall | Resume</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script defer src="script.js"></script>
-  </head>
-  <body>
-    <header>
-      <div class="logo"><a href="index.html">Ezra Hall</a></div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="resume.html" class="active">Resume</a></li>
-        </ul>
-      </nav>
-    </header>
 
-    <section class="resume-container">
-      <h1>My Resume</h1>
-      <p>Choose a format to view or download:</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ezra Hall | Resume</title>
+  <meta name="description"
+    content="Ezra Hall - Software Developer specializing in Power Platform, enterprise applications, and automation.">
+  <meta name="keywords" content="Ezra Hall, Software Developer, Power Platform, Microsoft, Automation, WPF, PowerApps">
+  <meta name="author" content="Ezra Hall">
 
-      <!-- Resume Preview -->
-      <div class="resume-box">
-        <iframe
-          id="resumeFrame"
-          src="assets/Resume.pdf"
-          onerror="handleLoadError()"
-        ></iframe>
-      </div>
+  <meta property="og:title" content="Ezra Hall | Software Developer">
+  <meta property="og:description"
+    content="Software Developer specializing in Power Platform & enterprise applications.">
+  <meta property="og:image" content="https://ezrahall99.github.io/EzraHall/assets/images/profile-image.jpg">
+  <meta property="og:url" content="https://ezrahall99.github.io/EzraHall/">
+  <meta property="og:type" content="website">
 
-      <!-- Download Options -->
-      <div class="download-buttons">
-        <a href="assets/Resume.pdf" download="Resume.pdf" class="cta-button">
-          📥 Download PDF
-        </a>
-        <a href="assets/Resume.docx" download="Resume.docx" class="cta-button">
-          📥 Download DOCX
-        </a>
-        <a href="assets/Resume.txt" download="Resume.txt" class="cta-button">
-          📥 Download TXT
-        </a>
-        <a href="assets/Resume.odt" download="Resume.odt" class="cta-button">
-          📥 Download TXT
-        </a>
-      </div>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ezra Hall | Software Developer">
+  <meta name="twitter:description"
+    content="Software Developer specializing in Power Platform & enterprise applications.">
+  <meta name="twitter:image" content="https://ezrahall99.github.io/EzraHall/assets/images/profile-image.jpg">
 
-      <p id="error-message" class="hidden">
-        ❌ Unable to load the resume preview. Please download it instead.
-      </p>
-    </section>
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 
-    <footer>
-      <p>&copy; 2025 Ezra Hall. All rights reserved.</p>
-    </footer>
-  </body>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img class="header-img" src="assets/images/profile-image.jpg" alt="Ezra Hall Profile Picture" loading="lazy">
+      <a href="index.html">Ezra Hall</a>
+    </div>
+
+    <!-- Hamburger Menu Button (Hidden on Desktop) -->
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <!-- Unified Navigation (Works for Both Desktop & Mobile) -->
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html+#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="resume.html" class="active">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="resume-container">
+    <h1>My Resume</h1>
+    <p>Choose a format to view or download:</p>
+
+    <!-- Resume Preview -->
+    <div class="resume-box">
+      <iframe id="resumeFrame" src="assets/Resume.pdf" onerror="handleLoadError()"></iframe>
+    </div>
+
+    <!-- Download Options -->
+    <div class="download-buttons">
+      <a href="assets/Resume.pdf" download="Resume.pdf" class="cta-button">
+        📥 Download PDF
+      </a>
+      <a href="assets/Resume.docx" download="Resume.docx" class="cta-button">
+        📥 Download DOCX
+      </a>
+      <a href="assets/Resume.txt" download="Resume.txt" class="cta-button">
+        📥 Download TXT
+      </a>
+      <a href="assets/Resume.odt" download="Resume.odt" class="cta-button">
+        📥 Download TXT
+      </a>
+    </div>
+
+    <p id="error-message" class="hidden">
+      ❌ Unable to load the resume preview. Please download it instead.
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Ezra Hall. All rights reserved.</p>
+  </footer>
+</body>
+
 </html>

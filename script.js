@@ -46,3 +46,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const menu = document.getElementById("nav-menu");
+  const hamburger = document.querySelector(".hamburger");
+
+  // Toggle menu visibility (Only for Mobile)
+  window.toggleMenu = function () {
+    if (window.innerWidth <= 768) {
+      // Only toggle if screen is mobile
+      menu.classList.toggle("active");
+      menu.style.display = menu.classList.contains("active") ? "flex" : "none";
+    }
+  };
+
+  // Close menu when clicking a link (Only for Mobile)
+  document.querySelectorAll("#nav-menu a").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 768) {
+        // Prevents hiding on desktop
+        menu.classList.remove("active");
+        menu.style.display = "none";
+      }
+    });
+  });
+});
