@@ -63,17 +63,28 @@
     </section>
 
     <section id="contact">
-      <h2>Contact</h2>
-      <p>
-        Email: <a href="mailto:ezrahall@example.com">ezrahall@example.com</a>
-      </p>
-      <p>
-        LinkedIn:
-        <a href="https://www.linkedin.com/in/ezrahall" target="_blank"
-          >linkedin.com/in/ezrahall</a
-        >
-      </p>
-    </section>
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out. I’ll get back to you ASAP!</p>
+    
+        <form id="contact-form" action="https://formsubmit.co/el/tisivi" method="POST">
+          <input type="hidden" name="_subject" value="New Contact Form Submission!">
+          <input type="hidden" name="_captcha" value="false">
+          
+          <input type="text" name="_honey" style="display:none;">
+          
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+      
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+      
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+      
+          <button type="submit" class="cta-button">Send Message</button>        </form>
+    
+        <p id="form-status" class="hidden"></p>
+    </section>    
 
     <footer>
       <p>&copy; 2025 Ezra Hall. All rights reserved.</p>
