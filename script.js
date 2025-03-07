@@ -70,3 +70,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const themeToggle = document.querySelector(".theme-toggle");
+    const currentTheme = localStorage.getItem("theme") || "dark";
+
+    // Apply stored theme
+    if (currentTheme === "light") {
+        document.body.classList.add("light-theme");
+        themeToggle.textContent = "🌞"; // Sun icon for light mode
+    }
+
+    // Toggle theme function
+    window.toggleTheme = function () {
+        document.body.classList.toggle("light-theme");
+
+        // Save preference to localStorage
+        if (document.body.classList.contains("light-theme")) {
+            localStorage.setItem("theme", "light");
+            themeToggle.textContent = "🌞"; // Change icon
+        } else {
+            localStorage.setItem("theme", "dark");
+            themeToggle.textContent = "🌙";
+        }
+    };
+});
