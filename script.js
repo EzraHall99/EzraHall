@@ -70,6 +70,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+document.addEventListener("click", (event) => {
+  if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+    menu.classList.remove("active");
+    menu.style.display = "none";
+  }
+});
+
 document.addEventListener("DOMContentLoaded", () => {
     const themeToggle = document.querySelector(".theme-toggle");
     const currentTheme = localStorage.getItem("theme") || "dark";

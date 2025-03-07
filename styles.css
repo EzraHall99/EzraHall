@@ -407,7 +407,7 @@ form {
   /* Show Menu When Active */
   #nav-menu.active {
     right: 0;
-    display: flex;
+    display: flex !important;
   }
   .theme-toggle {
     margin-top: 10px;
