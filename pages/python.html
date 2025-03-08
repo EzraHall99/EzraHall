@@ -1,20 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Python - Ezra Hall</title>
+  <meta name="description" content="Ezra Hall - Software Developer specializing in Power Platform, enterprise applications, and automation." />
+  <meta name="keywords" content="Ezra Hall, Software Developer, Power Platform, Microsoft, Automation, WPF, PowerApps" />
+  <meta name="author" content="Ezra Hall" />
+
+  <meta property="og:title" content="Ezra Hall | Software Developer" />
+  <meta property="og:description" content="Software Developer specializing in Power Platform & enterprise applications." />
+  <meta property="og:image" content="https://ezrahall99.github.io/EzraHall/assets/images/profile-image.jpg" />
+  <meta property="og:url" content="https://ezrahall99.github.io/EzraHall/" />
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ezra Hall | Software Developer" />
+  <meta name="twitter:description" content="Software Developer specializing in Power Platform & enterprise applications." />
+  <meta name="twitter:image" content="https://ezrahall99.github.io/EzraHall/assets/images/profile-image.jpg" />
+
+  <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
   <link rel="stylesheet" href="../styles.css" />
   <script defer src="../script.js"></script>
   <link rel="stylesheet" href="python-style.css" />
   <script defer src="python-script.js"></script>
 </head>
-
 <body>
-  <header>
+  <header id="main-header">
     <div class="logo">
-      <img class="header-img" src="assets/images/profile-image.jpg" alt="Ezra Hall Profile Picture" loading="lazy" />
+      <img class="header-img" src="../assets/images/profile-image.jpg" alt="Ezra Hall Profile Picture" loading="lazy" />
       <a href="index.html">Ezra Hall</a>
     </div>
 
@@ -22,7 +41,11 @@
     <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
 
     <!-- Hamburger Menu Button (Hidden on Desktop) -->
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
 
     <!-- Unified Navigation (Works for Both Desktop & Mobile) -->
     <nav id="nav-menu">
@@ -55,20 +78,16 @@
     </div>
   </section>
 
-
   <section class="skill-container">
     <h1>Python</h1>
     <p>Python is a powerful programming language used for automation, AI, and web development.</p>
-
     <h2>Why Python?</h2>
     <p>It’s easy to learn, widely used in data science, and has a vast ecosystem of libraries.</p>
-
     <h2>Projects Using Python</h2>
     <div class="project-card">
       <h3>Data Scraping Tool</h3>
       <p>A Python script to automate data collection from web sources.</p>
     </div>
-
     <h2>Resources</h2>
     <ul>
       <li><a href="https://www.python.org/" target="_blank">Official Python</a></li>
@@ -80,5 +99,4 @@
     <p>&copy; 2025 Ezra Hall. All rights reserved.</p>
   </footer>
 </body>
-
 </html>

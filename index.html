@@ -35,7 +35,7 @@
 </head>
 
 <body>
-  <header>
+  <header id="main-header">
     <div class="logo">
       <img class="header-img" src="assets/images/profile-image.jpg" alt="Ezra Hall Profile Picture" loading="lazy" />
       <a href="index.html">Ezra Hall</a>
@@ -45,7 +45,11 @@
     <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
 
     <!-- Hamburger Menu Button (Hidden on Desktop) -->
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
 
     <!-- Unified Navigation (Works for Both Desktop & Mobile) -->
     <nav id="nav-menu">

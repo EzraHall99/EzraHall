@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const dropdown = document.querySelector(".dropdown");
   const dropdownMenu = document.querySelector(".dropdown-menu");
   const skillsDropdown = document.getElementById("skillsDropdown");
+  const header = document.getElementById("main-header");
 
   // 🌙 Light/Dark Mode Toggle
   window.toggleTheme = function () {
@@ -24,24 +25,13 @@ document.addEventListener("DOMContentLoaded", () => {
   window.toggleMenu = function () {
     if (window.innerWidth <= 768) {
       menu.classList.toggle("active");
-      menu.style.display = menu.classList.contains("active") ? "flex" : "none";
+      hamburger.classList.toggle("active");
     }
   };
 
   window.addEventListener("resize", () => {
     if (window.innerWidth > 768) {
       menu.style.display = "flex";
-    } else if (!menu.classList.contains("active")) {
-      menu.style.display = "none";
-    }
-  });
-
-  document.addEventListener("click", (event) => {
-    if (window.innerWidth <= 768) {
-      if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
-        menu.classList.remove("active");
-        menu.style.display = "none";
-      }
     }
   });
 
@@ -49,30 +39,55 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener("click", () => {
       if (window.innerWidth <= 768) {
         menu.classList.remove("active");
-        menu.style.display = "none";
+        hamburger.classList.remove("active");
       }
     });
   });
 
+  skillsDropdown.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    const dropdownParent = event.target.parentElement; // the <li> element
+    dropdownParent.classList.toggle("active");
+  });
+
+  // Close any open dropdown if clicking outside
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".dropdown")) {
+      document.querySelectorAll(".dropdown.active").forEach((dropdown) => {
+        dropdown.classList.remove("active");
+      });
+    }
+  });
+
   if (window.innerWidth <= 768) {
     skillsDropdown.addEventListener("click", (event) => {
-      event.preventDefault(); // Prevents jumping to another section
-      dropdown.classList.toggle("active");
-      dropdownMenu.style.display = dropdown.classList.contains("active")
-        ? "block"
-        : "none";
+      event.preventDefault();
+      event.stopPropagation();
+      const dropdownParent = event.target.parentElement; // the <li> element
+      dropdownParent.classList.toggle("active");
     });
 
     document.addEventListener("click", (event) => {
-      if (
-        !dropdown.contains(event.target) &&
-        !skillsDropdown.contains(event.target)
-      ) {
-        dropdown.classList.remove("active");
-        dropdownMenu.style.display = "none";
+      if (window.innerWidth <= 768) {
+        if (!event.target.closest('.dropdown')) {
+          document.querySelectorAll('.dropdown.active').forEach((dropdown) => {
+            dropdown.classList.remove("active");
+          });
+        }
       }
     });
   }
+
+  // --- Sticky Header on Scroll ---
+  window.addEventListener("scroll", () => {
+    let headerHeight = document.getElementById("main-header").style.height;
+    if (window.scrollY > 0) {
+      header.classList.add("sticky");
+    } else {
+      header.classList.remove("sticky");
+    }
+  });
 });
 
 const terminal = document.getElementById("terminal");

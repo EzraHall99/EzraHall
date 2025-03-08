@@ -3,13 +3,10 @@ function typeIntroMessage() {
     ">>> Welcome to the Python Interactive Shell",
     ">>> Type a command and press Enter or click 'Send Command'",
   ];
-
   const terminalOutput = document.querySelector(".py-terminal-output");
-  terminalOutput.innerHTML = ""; // Clear existing text
-
+  terminalOutput.innerHTML = "";
   let lineIndex = 0;
   let charIndex = 0;
-
   function typeLine() {
     if (lineIndex < introLines.length) {
       let currentLine = introLines[lineIndex];
@@ -24,70 +21,48 @@ function typeIntroMessage() {
         setTimeout(typeLine, 300);
       }
     } else {
-      terminalOutput.innerHTML += "<br>"; // Ensure space after typing
+      terminalOutput.innerHTML += "<br>";
     }
   }
-
   typeLine();
 }
 
-typeIntroMessage(); // Call it on page load
+typeIntroMessage();
 
 document.addEventListener("DOMContentLoaded", () => {
   const terminalOutput = document.querySelector(".py-terminal-output");
   const commandLine = document.querySelector(".py-command-line");
   const sendButton = document.querySelector(".py-send-btn");
-
-  /*   function readKeyInput() {
-      document.addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
-          console.log("Enter Pressed");
-        } else if (event.key !== "Enter" && event.key !== "") {
-          console.log(event.key);
-        }
-      });
-    }
-    readKeyInput();
-   */
-  if (!terminalOutput || !commandLine || !sendButton) return; // Ensure elements exist
-
-  // Load predefined Python commands once and store them in memory
   let commandList = {};
+
   async function loadCommands() {
     try {
       const response = await fetch("commands.json");
       commandList = await response.json();
     } catch (error) {
-      console.error("⚠️ Error loading commands.json:", error);
+      console.error("Error loading commands.json:", error);
     }
   }
-  loadCommands(); // Load commands when the page loads
+  loadCommands();
 
   function handleCommand() {
     const input = commandLine.value.trim();
-    commandLine.value = ""; // Clear input after enter
-
+    commandLine.value = "";
     if (input !== "") {
-      // Display user input
       terminalOutput.innerHTML += `<p><span class="py-prompt">> </span>${input}</p>`;
-
-      // Get response from stored commands
-      const output = commandList[input] || `SyntaxError: invalid syntax`;
-      terminalOutput.innerHTML += `<p>${output}</p>`;
-
-      // Auto-scroll to latest entry
+      const outputText = commandList[input] || "SyntaxError: invalid syntax";
+      // Apply error animation if command not found
+      const errorClass = commandList[input] ? "" : "py-error";
+      terminalOutput.innerHTML += `<p class="${errorClass}">${outputText}</p>`;
       terminalOutput.scrollTop = terminalOutput.scrollHeight;
     }
   }
 
-  // Handle Enter key press
   commandLine.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
       event.preventDefault();
       handleCommand();
     }
   });
-
-  // Handle Click on "Send Command" Button
   sendButton.addEventListener("click", handleCommand);
 });
