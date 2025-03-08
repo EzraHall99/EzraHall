@@ -6,27 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ezra Hall | Software Developer Portfolio</title>
   <meta name="description"
-    content="Ezra Hall - Software Developer specializing in Power Platform, enterprise applications, and automation.">
-  <meta name="keywords" content="Ezra Hall, Software Developer, Power Platform, Microsoft, Automation, WPF, PowerApps">
-  <meta name="author" content="Ezra Hall">
+    content="Ezra Hall - Software Developer specializing in Power Platform, enterprise applications, and automation." />
+  <meta name="keywords"
+    content="Ezra Hall, Software Developer, Power Platform, Microsoft, Automation, WPF, PowerApps" />
+  <meta name="author" content="Ezra Hall" />
 
-  <meta property="og:title" content="Ezra Hall | Software Developer">
+  <meta property="og:title" content="Ezra Hall | Software Developer" />
   <meta property="og:description"
-    content="Software Developer specializing in Power Platform & enterprise applications.">
-  <meta property="og:image" content="https://ezrahall99.github.io/EzraHall/assets/images/profile-image.jpg">
-  <meta property="og:url" content="https://ezrahall99.github.io/EzraHall/">
-  <meta property="og:type" content="website">
+    content="Software Developer specializing in Power Platform & enterprise applications." />
+  <meta property="og:image" content="https://ezrahall99.github.io/EzraHall/assets/images/profile-image.jpg" />
+  <meta property="og:url" content="https://ezrahall99.github.io/EzraHall/" />
+  <meta property="og:type" content="website" />
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Ezra Hall | Software Developer">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ezra Hall | Software Developer" />
   <meta name="twitter:description"
-    content="Software Developer specializing in Power Platform & enterprise applications.">
-  <meta name="twitter:image" content="https://ezrahall99.github.io/EzraHall/assets/images/profile-image.jpg">
+    content="Software Developer specializing in Power Platform & enterprise applications." />
+  <meta name="twitter:image" content="https://ezrahall99.github.io/EzraHall/assets/images/profile-image.jpg" />
 
-  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
   <link rel="stylesheet" href="styles.css" />
@@ -36,14 +37,12 @@
 <body>
   <header>
     <div class="logo">
-      <img class="header-img" src="assets/images/profile-image.jpg" alt="Ezra Hall Profile Picture" loading="lazy">
+      <img class="header-img" src="assets/images/profile-image.jpg" alt="Ezra Hall Profile Picture" loading="lazy" />
       <a href="index.html">Ezra Hall</a>
     </div>
 
     <!-- Light/Dark Mode Toggle -->
-    <div class="theme-toggle" onclick="toggleTheme()">
-      🌙
-    </div>
+    <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
 
     <!-- Hamburger Menu Button (Hidden on Desktop) -->
     <div class="hamburger" onclick="toggleMenu()">☰</div>
@@ -51,20 +50,38 @@
     <!-- Unified Navigation (Works for Both Desktop & Mobile) -->
     <nav id="nav-menu">
       <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="resume.html">Resume</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#" id="skillsDropdown">My Skills ⏷</a>
+          <ul class="dropdown-menu">
+            <li><a href="/pages/powerapps.html">Power Apps</a></li>
+            <li><a href="/pages/python.html">Python</a></li>
+            <li><a href="/pages/csharp.html">C#</a></li>
+            <li><a href="/pages/javascript.html">JavaScript</a></li>
+          </ul>
+        </li>
+        <li><a href="/pages/resume.html">Resume</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
-
   <div id="chatbot">
-    <div id="chatbox"></div>
-    <input type="text" id="chatInput" placeholder="Ask me anything..." />
-  </div>  
+    <div id="chatbox-container">
+      <div id="chatbox"></div>
+    </div>
+    <div id="chat-input-container">
+      <input type="text" id="chatInput" placeholder="Ask me anything..." />
+      <div class="chat-buttons">
+        <button id="sendChat" class="hidden">⪢</button>
+        <button id="closeChatbot">✕</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Minimized Chat Icon -->
+  <div id="chatIcon" class="hidden">
+    <img class="chatbotsvg" src="assets/images/chat-bot.svg" alt="chatbot icon" />
+  </div>
 
   <section class="hero">
     <div id="terminal">
@@ -96,7 +113,7 @@
       <a href="https://github.com/EzraHall99/SourceIt" target="_blank">📂 GitHub</a>
     </div>
     -->
-    
+
     <div class="project-card">
       <h3>PC Monitor App</h3>
       <p>Custom PC monitoring tool.</p>
@@ -133,16 +150,16 @@
     <p>Feel free to reach out. I’ll get back to you ASAP!</p>
 
     <form action="https://formsubmit.co/el/tisivi" method="POST">
-      <input type="hidden" name="_subject" value="New Contact Form Submission!">
-      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New Contact Form Submission!" />
+      <input type="hidden" name="_captcha" value="false" />
 
-      <input type="text" name="_honey" style="display:none;">
+      <input type="text" name="_honey" style="display: none" />
 
       <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
+      <input type="text" id="name" name="name" required />
 
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+      <input type="email" id="email" name="email" required />
 
       <label for="message">Message</label>
       <textarea id="message" name="message" rows="5" required></textarea>

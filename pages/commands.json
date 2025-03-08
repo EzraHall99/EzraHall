@@ -1,0 +1,11 @@
+{
+  "print('Hello')": "Hello",
+  "2 + 2": "4",
+  "len('Python')": "6",
+  "3 * 5": "15",
+  "help": "Available commands:\n- print('Hello')\n- 2 + 2\n- len('Python')\n- help (shows this message)",
+  "Ezra": "Ezra Hall is a software developer specializing in Power Platform, Python, and C#.",
+  "hacker_mode": "Entering hacker mode...\n✅ Activating dark theme...\n✅ Running Python AI...",
+  "snake_game": "🐍 You found the hidden SNAKE GAME! Coming soon...",
+  "shutdown": "System shutting down...\nJust kidding 😆"
+}

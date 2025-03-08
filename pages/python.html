@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python - Ezra Hall</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <script defer src="../script.js"></script>
+  <link rel="stylesheet" href="python-style.css" />
+  <script defer src="python-script.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img class="header-img" src="assets/images/profile-image.jpg" alt="Ezra Hall Profile Picture" loading="lazy" />
+      <a href="index.html">Ezra Hall</a>
+    </div>
+
+    <!-- Light/Dark Mode Toggle -->
+    <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
+
+    <!-- Hamburger Menu Button (Hidden on Desktop) -->
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <!-- Unified Navigation (Works for Both Desktop & Mobile) -->
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#" id="skillsDropdown">My Skills ⏷</a>
+          <ul class="dropdown-menu">
+            <li><a href="/pages/powerapps.html">Power Apps</a></li>
+            <li><a href="/pages/python.html">Python</a></li>
+            <li><a href="/pages/csharp.html">C#</a></li>
+            <li><a href="/pages/javascript.html">JavaScript</a></li>
+          </ul>
+        </li>
+        <li><a href="/pages/resume.html">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="py-terminal">
+    <div class="py-terminal-output">
+      <p><span class="py-prompt">> </span>Welcome to the Python Interactive Shell</p>
+      <p><span class="py-prompt">> </span>Type a command and press Enter or click "Send Command"</p>
+    </div>
+    <div class="py-terminal-input">
+      <span class="py-prompt">> </span>
+      <input name="py-command-line" type="text" class="py-command-line" autofocus>
+      <button class="py-send-btn" type="button">Send Command</button>
+    </div>
+  </section>
+
+
+  <section class="skill-container">
+    <h1>Python</h1>
+    <p>Python is a powerful programming language used for automation, AI, and web development.</p>
+
+    <h2>Why Python?</h2>
+    <p>It’s easy to learn, widely used in data science, and has a vast ecosystem of libraries.</p>
+
+    <h2>Projects Using Python</h2>
+    <div class="project-card">
+      <h3>Data Scraping Tool</h3>
+      <p>A Python script to automate data collection from web sources.</p>
+    </div>
+
+    <h2>Resources</h2>
+    <ul>
+      <li><a href="https://www.python.org/" target="_blank">Official Python</a></li>
+      <li><a href="https://realpython.com/" target="_blank">Real Python Tutorials</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Ezra Hall. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>

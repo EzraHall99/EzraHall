@@ -1,0 +1,86 @@
+.python-shell {
+  background: #1e1e1e;
+  color: #c9d1d9;
+  font-family: "Courier New", monospace;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Terminal Output */
+.py-terminal {
+  background: #1e1e1e;
+  color: #c9d1d9;
+  font-family: "Courier New", monospace;
+  padding: 10px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
+  animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.95;
+  }
+}
+
+/* Terminal Output */
+.py-terminal-output {
+  background: black;
+  padding: 15px;
+  border-radius: 5px;
+  overflow: hidden;
+  min-height: 150px;
+  max-height: 300px;
+  overflow-y: auto;
+  font-size: 14px;
+  text-align: left;
+}
+
+/* Prompt */
+.py-prompt {
+  color: #00ff00;
+  font-weight: bold;
+}
+
+/* User Input */
+.py-terminal-input {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.py-command-line {
+  background: black;
+  border: none;
+  color: white;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  width: 100%;
+  outline: none;
+}
+
+.py-send-btn {
+  background: #00ff00;
+  color: black;
+  border: none;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 5px;
+  border-radius: 3px;
+}
+
+.py-send-btn:hover {
+  background: #33ff33;
+}
