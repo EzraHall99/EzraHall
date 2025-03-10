@@ -3,9 +3,16 @@
   "2 + 2": "4",
   "len('Python')": "6",
   "3 * 5": "15",
-  "help": "Available commands:\n- print('Hello')\n- 2 + 2\n- len('Python')\n- help (shows this message)",
-  "Ezra": "Ezra Hall is a software developer specializing in Power Platform, Python, and C#.",
+  "help()": "Dynamic Help System: Type 'help(\"command\")' for details.",
+  "help('len')": "len(obj) -> Returns the number of items in an object.",
+  "help('print')": "print(*objects, sep=' ', end='\\n') -> Prints objects to the console.",
   "hacker_mode": "Entering hacker mode...\n✅ Activating dark theme...\n✅ Running Python AI...",
   "snake_game": "🐍 You found the hidden SNAKE GAME! Coming soon...",
-  "shutdown": "System shutting down...\nJust kidding 😆"
+  "shutdown": "System shutting down...\nJust kidding 😆",
+  "sudo": "Nice try, but this isn't Linux! 😂",
+  "fortune": "Code is like humor. When you have to explain it, it’s bad.",
+  "ascii art": "⠀⠀⠀⣀⣀⡀\n⠀⣴⠟⠋⣹⠙⠻⣦\n⠀⡿⠁⠸⠿⠇⠘⢿\n⠀⡇⡠⠶⠶⡄⢸⣸\n⠀⠃⠈⠛⠋⠁⠘⠃",
+  "Hey Python": "Hello, human! What would you like to code today?",
+  "Tell me a joke": "Why do programmers prefer dark mode? Because light attracts bugs! 😂",
+  "What's your name?": "I am PyBot, the friendly Python terminal assistant!"
 }

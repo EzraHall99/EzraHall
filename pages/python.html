@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,95 +9,52 @@
   <meta name="keywords" content="Ezra Hall, Software Developer, Power Platform, Microsoft, Automation, WPF, PowerApps" />
   <meta name="author" content="Ezra Hall" />
 
-  <meta property="og:title" content="Ezra Hall | Software Developer" />
-  <meta property="og:description" content="Software Developer specializing in Power Platform & enterprise applications." />
-  <meta property="og:image" content="https://ezrahall99.github.io/EzraHall/assets/images/profile-image.jpg" />
-  <meta property="og:url" content="https://ezrahall99.github.io/EzraHall/" />
-  <meta property="og:type" content="website" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Ezra Hall | Software Developer" />
-  <meta name="twitter:description" content="Software Developer specializing in Power Platform & enterprise applications." />
-  <meta name="twitter:image" content="https://ezrahall99.github.io/EzraHall/assets/images/profile-image.jpg" />
-
-  <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
-  <link rel="stylesheet" href="../styles.css" />
-  <script defer src="../script.js"></script>
-  <link rel="stylesheet" href="python-style.css" />
+  <link rel="stylesheet" href="python-style.css">
   <script defer src="python-script.js"></script>
 </head>
+
 <body>
-  <header id="main-header">
-    <div class="logo">
-      <img class="header-img" src="../assets/images/profile-image.jpg" alt="Ezra Hall Profile Picture" loading="lazy" />
-      <a href="index.html">Ezra Hall</a>
-    </div>
-
-    <!-- Light/Dark Mode Toggle -->
-    <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
-
-    <!-- Hamburger Menu Button (Hidden on Desktop) -->
-    <div class="hamburger" onclick="toggleMenu()">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </div>
-
-    <!-- Unified Navigation (Works for Both Desktop & Mobile) -->
-    <nav id="nav-menu">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li class="dropdown">
-          <a href="#" id="skillsDropdown">My Skills ⏷</a>
-          <ul class="dropdown-menu">
-            <li><a href="/pages/powerapps.html">Power Apps</a></li>
-            <li><a href="/pages/python.html">Python</a></li>
-            <li><a href="/pages/csharp.html">C#</a></li>
-            <li><a href="/pages/javascript.html">JavaScript</a></li>
-          </ul>
-        </li>
-        <li><a href="/pages/resume.html">Resume</a></li>
-        <li><a href="#contact">Contact</a></li>
+  <div class="py-container">
+    <aside class="py-sidebar">
+      <h2>📝 Python IDE</h2>
+      <ul class="py-files">
+        <li class="active" onclick="switchTab('script1')">script1.py</li>
+        <li onclick="switchTab('script2')">script2.py</li>
       </ul>
-    </nav>
-  </header>
+      <button class="py-theme-toggle" onclick="toggleTheme()">🌗 Toggle Theme</button>
+    </aside>
 
-  <section class="py-terminal">
-    <div class="py-terminal-output">
-      <p><span class="py-prompt">> </span>Welcome to the Python Interactive Shell</p>
-      <p><span class="py-prompt">> </span>Type a command and press Enter or click "Send Command"</p>
-    </div>
-    <div class="py-terminal-input">
-      <span class="py-prompt">> </span>
-      <input name="py-command-line" type="text" class="py-command-line" autofocus>
-      <button class="py-send-btn" type="button">Send Command</button>
-    </div>
-  </section>
+    <main class="py-main">
+      <div class="py-tabs">
+        <button class="active" data-tab="script1">script1.py</button>
+        <button data-tab="script2">script2.py</button>
+      </div>
 
-  <section class="skill-container">
-    <h1>Python</h1>
-    <p>Python is a powerful programming language used for automation, AI, and web development.</p>
-    <h2>Why Python?</h2>
-    <p>It’s easy to learn, widely used in data science, and has a vast ecosystem of libraries.</p>
-    <h2>Projects Using Python</h2>
-    <div class="project-card">
-      <h3>Data Scraping Tool</h3>
-      <p>A Python script to automate data collection from web sources.</p>
-    </div>
-    <h2>Resources</h2>
-    <ul>
-      <li><a href="https://www.python.org/" target="_blank">Official Python</a></li>
-      <li><a href="https://realpython.com/" target="_blank">Real Python Tutorials</a></li>
-    </ul>
-  </section>
+      <div class="py-editor-container">
+        <pre class="py-editor" id="script1" contenteditable="true"><code># Type your Python code here...
+print("Hello, world!")</code></pre>
 
-  <footer>
-    <p>&copy; 2025 Ezra Hall. All rights reserved.</p>
-  </footer>
+        <pre class="py-editor hidden" id="script2" contenteditable="true"><code># Second script
+for i in range(5):
+    print(i)</code></pre>
+      </div>
+
+      <button class="py-run-btn" onclick="runCode()">▶ Run</button>
+
+      <div class="py-terminal-container">
+        <section class="py-terminal">
+          <div class="py-terminal-output">
+            <p><span class="py-prompt">> </span>Welcome to the Python Interactive Shell</p>
+          </div>
+          <div class="py-terminal-input">
+            <span class="py-prompt">> </span>
+            <input name="py-command-line" type="text" class="py-command-line" autofocus>
+            <button class="py-send-btn" type="button">Send</button>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
 </body>
+
 </html>
