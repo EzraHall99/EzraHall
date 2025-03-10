@@ -264,8 +264,8 @@ nav {
   #nav-menu {
     position: fixed;
     top: calc(100vh * 0.10 - 15px);
-    right: -250px; /* Off-screen initially */
-    width: 250px;
+    right: -45vw; /* Off-screen initially */
+    width: 45vw;
     height: calc(100vh - (10% - 15px));
     background: var(--header-bg);
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
@@ -355,19 +355,19 @@ nav {
     text-align: center;
     gap: 5px;
     text-decoration: none;
+    overflow: hidden;
   }
   .logo img {
     display: block;
     margin: 0 auto;
+    height: calc((100vh * .10)/2);
+    width: auto;
   }
   .logo a {
     display: block;
-    margin-top: 5px;
+    font-size: 5vw;
   }
-  .header-img {
-    height: 75px;
-    width: 75px;
-  }
+
   .hero h1 {
     font-size: 32px;
   }
@@ -388,7 +388,7 @@ nav {
     gap: 10px;
   }
   form {
-    width: 90%;
+    width: 90% !important;
   }
   footer {
     font-size: 14px;
@@ -398,7 +398,7 @@ nav {
   .theme-toggle {
     position: absolute;
     left: 20px;
-    top: 50%;
+    bottom: 0;
     transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
@@ -408,7 +408,7 @@ nav {
   .hamburger {
     position: absolute;
     right: 20px;
-    top: 50%;
+    bottom: 0;
     transform: translateY(-50%);
     display: flex;
     -webkit-transform: translateY(-50%);
