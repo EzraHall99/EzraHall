@@ -21,39 +21,41 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Global Chatbot
-  const chatInput = document.getElementById("chatInput");
-  chatInput.addEventListener("keypress", async function (e) {
-    if (e.key === "Enter") {
-      let userMessage = this.value;
-      this.value = "";
-      const chatbox = document.getElementById("chatbox");
-      const userDiv = document.createElement("div");
-      userDiv.classList.add("user-message");
-      userDiv.textContent = userMessage;
-      chatbox.appendChild(userDiv);
-      const botDiv = document.createElement("div");
-      botDiv.classList.add("bot-message");
-      botDiv.textContent = "Thinking...";
-      chatbox.appendChild(botDiv);
+  if (location.href == "/index.html") {
+    const chatInput = document.getElementById("chatInput");
+    chatInput.addEventListener("keypress", async function (e) {
+      if (e.key === "Enter") {
+        let userMessage = this.value;
+        this.value = "";
+        const chatbox = document.getElementById("chatbox");
+        const userDiv = document.createElement("div");
+        userDiv.classList.add("user-message");
+        userDiv.textContent = userMessage;
+        chatbox.appendChild(userDiv);
+        const botDiv = document.createElement("div");
+        botDiv.classList.add("bot-message");
+        botDiv.textContent = "Thinking...";
+        chatbox.appendChild(botDiv);
 
-      try {
-        let response = await fetch(
-          "https://webpage-bot.ezrajhall0.workers.dev",
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ message: userMessage }),
-          }
-        );
-        let data = await response.json();
-        botDiv.textContent =
-          data.choices?.[0]?.message?.content || "⚠️ No response from AI.";
-      } catch (error) {
-        botDiv.textContent = "❌ Network Error. Try again later.";
-        console.error("Chatbot Fetch Error:", error);
+        try {
+          let response = await fetch(
+            "https://webpage-bot.ezrajhall0.workers.dev",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ message: userMessage }),
+            }
+          );
+          let data = await response.json();
+          botDiv.textContent =
+            data.choices?.[0]?.message?.content || "⚠️ No response from AI.";
+        } catch (error) {
+          botDiv.textContent = "❌ Network Error. Try again later.";
+          console.error("Chatbot Fetch Error:", error);
+        }
       }
-    }
-  });
+    });
+  }
 
   /******** MOBILE-SPECIFIC SCRIPTS ********/
   const menu = document.getElementById("nav-menu");
@@ -141,130 +143,132 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /******** TERMINAL TYPE EFFECT (GLOBAL) ********/
-const terminal = document.getElementById("terminal");
-const cursor = document.createElement("span");
-cursor.classList.add("cursor");
-cursor.textContent = "|";
-terminal.appendChild(cursor);
-
-const lines = [
-  " ",
-  "C:\\> Welcome to Ezra's Portfolio...",
-  "C:\\> Software Developer | Power Platform Specialist",
-  "C:\\> ",
-  "C:\\> Type 'help' for more info.",
-];
-
-let lineIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-let errorTyped = false;
-
-function typeEffect() {
-  if (lineIndex >= lines.length) {
-    cursor.style.animation = "blink 1s infinite";
-    return;
-  }
-
-  let currentLine = lines[lineIndex];
-  let displayText = terminal.innerHTML.replace(cursor.outerHTML, "");
-
-  if (!isDeleting) {
-    displayText += currentLine[charIndex];
-    charIndex++;
-
-    if (charIndex === currentLine.length) {
-      if (currentLine.includes("<backspace>") && !errorTyped) {
-        errorTyped = true;
-        isDeleting = true;
-        setTimeout(typeEffect, 500);
-        return;
-      }
-      charIndex = 0;
-      lineIndex++;
-      if (lineIndex !== lines.length) {
-        displayText += "<br>";
-      }
-    }
-  } else {
-    displayText = displayText.slice(0, -1);
-    charIndex--;
-    if (charIndex === 14) {
-      isDeleting = false;
-      charIndex++;
-      displayText += "error...";
-    }
-  }
-  terminal.innerHTML = displayText;
+if (location.href == "/index.html") {
+  const terminal = document.getElementById("terminal");
+  const cursor = document.createElement("span");
+  cursor.classList.add("cursor");
+  cursor.textContent = "|";
   terminal.appendChild(cursor);
-  setTimeout(typeEffect, isDeleting ? 50 : 80);
-}
 
-typeEffect();
+  const lines = [
+    " ",
+    "C:\\> Welcome to Ezra's Portfolio...",
+    "C:\\> Software Developer | Power Platform Specialist",
+    "C:\\> ",
+    "C:\\> Type 'help' for more info.",
+  ];
 
-/******** CHATBOT UI TOGGLE (GLOBAL) ********/
-document.addEventListener("DOMContentLoaded", () => {
-  const chatbot = document.getElementById("chatbot");
-  const chatIcon = document.getElementById("chatIcon");
-  const closeChatbot = document.getElementById("closeChatbot");
-  const chatInput = document.getElementById("chatInput");
-  const sendChat = document.getElementById("sendChat");
+  let lineIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  let errorTyped = false;
 
-  closeChatbot.addEventListener("click", () => {
-    chatbot.classList.add("hidden");
-    chatIcon.classList.remove("hidden");
-  });
-
-  chatIcon.addEventListener("click", () => {
-    chatbot.classList.remove("hidden");
-    chatIcon.classList.add("hidden");
-  });
-
-  chatInput.addEventListener("input", () => {
-    if (chatInput.value.trim() !== "") {
-      sendChat.classList.add("visible");
-    } else {
-      sendChat.classList.remove("visible");
+  function typeEffect() {
+    if (lineIndex >= lines.length) {
+      cursor.style.animation = "blink 1s infinite";
+      return;
     }
-  });
 
-  function sendMessage() {
-    if (chatInput.value.trim() === "") return;
+    let currentLine = lines[lineIndex];
+    let displayText = terminal.innerHTML.replace(cursor.outerHTML, "");
 
-    let userMessage = chatInput.value.trim();
-    chatInput.value = "";
-    sendChat.classList.remove("visible");
+    if (!isDeleting) {
+      displayText += currentLine[charIndex];
+      charIndex++;
 
-    let chatbox = document.getElementById("chatbox");
-    let userDiv = document.createElement("div");
-    userDiv.classList.add("user-message");
-    userDiv.textContent = userMessage;
-    chatbox.appendChild(userDiv);
-
-    let botDiv = document.createElement("div");
-    botDiv.classList.add("bot-message");
-    botDiv.textContent = "Thinking...";
-    chatbox.appendChild(botDiv);
-
-    fetch("https://webpage-bot.ezrajhall0.workers.dev", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message: userMessage }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        botDiv.textContent =
-          data.choices?.[0]?.message?.content || "⚠️ No response from AI.";
-      })
-      .catch(() => {
-        botDiv.textContent = "❌ Network Error. Try again later.";
-      });
+      if (charIndex === currentLine.length) {
+        if (currentLine.includes("<backspace>") && !errorTyped) {
+          errorTyped = true;
+          isDeleting = true;
+          setTimeout(typeEffect, 500);
+          return;
+        }
+        charIndex = 0;
+        lineIndex++;
+        if (lineIndex !== lines.length) {
+          displayText += "<br>";
+        }
+      }
+    } else {
+      displayText = displayText.slice(0, -1);
+      charIndex--;
+      if (charIndex === 14) {
+        isDeleting = false;
+        charIndex++;
+        displayText += "error...";
+      }
+    }
+    terminal.innerHTML = displayText;
+    terminal.appendChild(cursor);
+    setTimeout(typeEffect, isDeleting ? 50 : 80);
   }
 
-  sendChat.addEventListener("click", sendMessage);
-  chatInput.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") {
-      sendMessage();
+  typeEffect();
+
+  /******** CHATBOT UI TOGGLE (GLOBAL) ********/
+  document.addEventListener("Chatbot", () => {
+    const chatbot = document.getElementById("chatbot");
+    const chatIcon = document.getElementById("chatIcon");
+    const closeChatbot = document.getElementById("closeChatbot");
+    const chatInput = document.getElementById("chatInput");
+    const sendChat = document.getElementById("sendChat");
+
+    closeChatbot.addEventListener("click", () => {
+      chatbot.classList.add("hidden");
+      chatIcon.classList.remove("hidden");
+    });
+
+    chatIcon.addEventListener("click", () => {
+      chatbot.classList.remove("hidden");
+      chatIcon.classList.add("hidden");
+    });
+
+    chatInput.addEventListener("input", () => {
+      if (chatInput.value.trim() !== "") {
+        sendChat.classList.add("visible");
+      } else {
+        sendChat.classList.remove("visible");
+      }
+    });
+
+    function sendMessage() {
+      if (chatInput.value.trim() === "") return;
+
+      let userMessage = chatInput.value.trim();
+      chatInput.value = "";
+      sendChat.classList.remove("visible");
+
+      let chatbox = document.getElementById("chatbox");
+      let userDiv = document.createElement("div");
+      userDiv.classList.add("user-message");
+      userDiv.textContent = userMessage;
+      chatbox.appendChild(userDiv);
+
+      let botDiv = document.createElement("div");
+      botDiv.classList.add("bot-message");
+      botDiv.textContent = "Thinking...";
+      chatbox.appendChild(botDiv);
+
+      fetch("https://webpage-bot.ezrajhall0.workers.dev", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: userMessage }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          botDiv.textContent =
+            data.choices?.[0]?.message?.content || "⚠️ No response from AI.";
+        })
+        .catch(() => {
+          botDiv.textContent = "❌ Network Error. Try again later.";
+        });
     }
+
+    sendChat.addEventListener("click", sendMessage);
+    chatInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        sendMessage();
+      }
+    });
   });
-});
+}

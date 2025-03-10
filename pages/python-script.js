@@ -29,7 +29,7 @@ function typeIntroMessage() {
 
 typeIntroMessage();
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("Py-Terminal", () => {
   const terminalOutput = document.querySelector(".py-terminal-output");
   const commandLine = document.querySelector(".py-command-line");
   const sendButton = document.querySelector(".py-send-btn");

@@ -23,31 +23,43 @@
     content="Software Developer specializing in Power Platform & enterprise applications.">
   <meta name="twitter:image" content="https://ezrahall99.github.io/EzraHall/assets/images/profile-image.jpg">
 
-  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
+  <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../styles.css" />
+  <script defer src="../script.js"></script>
 </head>
 
 <body>
-  <header>
+  <header id="main-header">
     <div class="logo">
-      <img class="header-img" src="assets/images/profile-image.jpg" alt="Ezra Hall Profile Picture" loading="lazy">
-      <a href="index.html">Ezra Hall</a>
+      <img class="header-img" src="../assets/images/profile-image.jpg" alt="Ezra Hall Profile Picture" loading="lazy" />
+      <a href="../index.html">Ezra Hall</a>
     </div>
 
     <!-- Light/Dark Mode Toggle -->
-    <div class="theme-toggle" onclick="toggleTheme()">
-      🌙
-    </div>
+    <div class="theme-toggle" onclick="toggleTheme()">🌙</div>
 
     <!-- Hamburger Menu Button (Hidden on Desktop) -->
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
 
     <!-- Unified Navigation (Works for Both Desktop & Mobile) -->
     <nav id="nav-menu">
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="resume.html" class="active">Resume</a></li>
+        <li><a href="../index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#" id="skillsDropdown">My Skills ⏷</a>
+          <ul class="dropdown-menu">
+            <li><a href="../pages/powerapps.html">Power Apps</a></li>
+            <li><a href="../pages/python.html">Python</a></li>
+            <li><a href="../pages/csharp.html">C#</a></li>
+            <li><a href="../pages/javascript.html">JavaScript</a></li>
+          </ul>
+        </li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -58,21 +70,21 @@
 
     <!-- Resume Preview -->
     <div class="resume-box">
-      <iframe id="resumeFrame" src="assets/Resume.pdf" onerror="handleLoadError()"></iframe>
+      <iframe id="resumeFrame" src="../assets/Resume.pdf" onerror="handleLoadError()"></iframe>
     </div>
 
     <!-- Download Options -->
     <div class="download-buttons">
-      <a href="assets/Resume.pdf" download="Resume.pdf" class="cta-button">
+      <a href="../assets/Resume.pdf" download="Resume.pdf" class="cta-button">
         📥 Download PDF
       </a>
-      <a href="assets/Resume.docx" download="Resume.docx" class="cta-button">
+      <a href="../assets/Resume.docx" download="Resume.docx" class="cta-button">
         📥 Download DOCX
       </a>
-      <a href="assets/Resume.txt" download="Resume.txt" class="cta-button">
+      <a href="../assets/Resume.txt" download="Resume.txt" class="cta-button">
         📥 Download TXT
       </a>
-      <a href="assets/Resume.odt" download="Resume.odt" class="cta-button">
+      <a href="../assets/Resume.odt" download="Resume.odt" class="cta-button">
         📥 Download ODT
       </a>
     </div>
